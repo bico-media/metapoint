@@ -31,14 +31,14 @@ OP_RETURN
 
 - Please use `|` (pipe) to separate the Metanet information and the rest of the protocols
 
-- The bitcom namespace for Metapoint is `1NnEuYAPJoeB1oa5vfEaoKYEYUPgsuLLEp`
+- The [bitcom namespace](https://bterm.network/#address=1NnEuYAPJoeB1oa5vfEaoKYEYUPgsuLLEp) for Metapoint is `1NnEuYAPJoeB1oa5vfEaoKYEYUPgsuLLEp`
 
 - `type` must have one of the following values:
   - the string `tx` to indicate that `value` contains the transaction ID of a transaction. 
   - the string `c` indicating that `value` contains the sha256 hash of the targeted content. 
   - the string `b` indicating that `value` contains the transaction ID of a b:// formatted transaction.
   - the string `bcat` indicating that `value` contains the transaction ID of a B://cat formatted transaction.
-  - The string `txt` indicating that `value` contains the actual content. 
+  - The string `text` indicating that `value` contains the actual content. 
 
 - `value` must be a utf8 encoded string no longer than 512 bytes. 
 
@@ -64,11 +64,11 @@ OP_RETURN
 
 As any transaction can be referenced as the target, it is up to the implementation to hold information about how the targeted transaction should be processed/interpreted. It is, however, strongly suggested that implementations using Metapoint disregard any Metanet information in a targeted transaction to ensure relations between nodes are kept on the Metanet 
 
-###  c, b and bcat 
+###  C, b and bcat 
 One could argue that `tx` is all that is needed to reference another transaction. However, `c`, `b` and `bcat` are the most used protocols for storing more data-heavy transactions on the blockchain at the moment. As the process of obtaining the content differs, it is helpful information to have already when the node has been loaded. 
 
-### txt
-The key `txt` Is meant to be used when an implementation normally relies on Metapoint, but short strings like settings or names make the overhead of another transaction too big compared to the data carried. 
+### Text
+The key `text` Is meant to be used when an implementation normally relies on Metapoint, but short strings like settings or names make the overhead of another transaction too big compared to the data carried. 
 
 
 
